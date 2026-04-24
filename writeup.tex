@@ -9,6 +9,8 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage[style=apa]{biblatex}
+\usepackage{graphicx}
+\graphicspath{{plots/}}
 \DeclareLanguageMapping{english}{english-apa}
 
 \addbibresource{refs.bib}
@@ -89,11 +91,36 @@ Redoing calculations from \textcite{nevo2012} we find the following bounds:
 
 See \autoref{app:proofs} for the full calculation.
 
+In \autoref{fig:bounds} we plot the identified set $B(\delta) = [\underline{\beta}(\delta), \overline{\beta}(\delta)]$ as a function of $\delta$. As $\delta$ increases, the bounds widen, reflecting weaker assumptions and hence less precise identification. We can see that the true $\beta$ is contained in the identified set for $\delta \geq \frac{\rho_{ZU}}{\rho_{XU}}$, as then Assumption 4 is satisfied.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{bounds_plot.png}
+    \caption{Identified bounds on $\beta$ as a function of $\delta$. Red line signifies true $\beta$. $\sigma_X = \sigma_Z = \sigma_U = 1$ and $\text{Cov}(X,Z) = {-0.3}$}
+    \label{fig:bounds}
+\end{figure}
 
 
 
 \subsubsection{Bivariate instrument}
+
+The identified set with two instruments is just the intersection of the identified sets from each instrument. The fomula is in \ref{app:proofs}.
+
+In \autoref{fig:2Z_bounds} the dark blue region corresponds to the strength of assumptions we need to make to reject $\beta=0.4$ in our hypothetical example. The light blue area is the area we are able to reject at now that we have included a second instrument. 
+
+\begin{figure}[hhtp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{bounds_2Z_plot.png}
+    \caption{
+Parameters are set to $\text{Var}(X)=\text{Var}(U)=\text{Var}(Z_1)=\text{Var}(Z_2)=1$, 
+with $\beta=0.5$, $\text{Cov}(X,U)=0.4$, $\text{Cov}(Z_1,U)=0.1$, $\text{Cov}(Z_2,U)=0.2$, 
+$\text{Cov}(X,Z_1)=-0.3$, and $\text{Cov}(X,Z_2)=-0.5$. 
+The figure shows, over a grid of $(\delta_1,\delta_2)$, whether the value $0.4$ lies within 
+the identified set based on $Z_1$ alone, $Z_2$ alone, and their intersection.
+}
+    \label{fig:2Z_bounds}
+\end{figure}
+
 
 \section{General simulations}
 
@@ -104,8 +131,14 @@ See \autoref{app:proofs} for the full calculation.
 
 
 \appendix
+
+\section{An Example of Sensitivity Analysis}
+
+
+
 \section{Identified Set in Linear Model}\label{app:proofs}
 
+\subsection{Univariate Instrument}
 \[
 Y=\beta X+U,\qquad E[U]=0.
 \]
@@ -251,6 +284,58 @@ B(\delta)
 \right\}
 \right].
 }
+\]
+
+\subsection{Bivariate Instrument}
+
+\[
+B(\delta_1,\delta_2)
+=
+\left[
+\max\left\{
+\underline B_1(\delta_1),
+\underline B_2(\delta_2)
+\right\},
+\;
+\min\left\{
+\overline B_1(\delta_1),
+\overline B_2(\delta_2)
+\right\}
+\right],
+\]
+with 
+\[
+\underline B_j(\delta_j)
+=
+\min\left\{
+\frac{\sigma_{Z_jY}}{\sigma_{XZ_j}},
+\frac{
+\sigma_X\sigma_{Z_jY}
+-
+\delta_j\sigma_{Z_j}\sigma_{XY}
+}{
+\sigma_X\sigma_{XZ_j}
+-
+\delta_j\sigma_{Z_j}\sigma_X^2
+}
+\right\},
+\]
+and
+\[
+\overline B_j(\delta_j)
+=
+\max\left\{
+\frac{\sigma_{Z_jY}}{\sigma_{XZ_j}},
+\frac{
+\sigma_X\sigma_{Z_jY}
+-
+\delta_j\sigma_{Z_j}\sigma_{XY}
+}{
+\sigma_X\sigma_{XZ_j}
+-
+\delta_j\sigma_{Z_j}\sigma_X^2
+}
+\right\}.
 \]
 
 \end{document}

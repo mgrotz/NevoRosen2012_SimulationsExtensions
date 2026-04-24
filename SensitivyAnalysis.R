@@ -99,20 +99,19 @@ plot_df <- scenarios %>%
   }) %>%
   ungroup()
 
-ggplot(plot_df, aes(x = delta)) +
+p <- ggplot(plot_df, aes(x = delta)) +
   geom_ribbon(aes(ymin = lower, ymax = upper), alpha = 0.25) +
   geom_line(aes(y = lower), linewidth = 0.7) +
   geom_line(aes(y = upper), linewidth = 0.7) +
   geom_hline(yintercept = 0.5, linetype = "dashed", color = "red") +
   facet_wrap(~ label, ncol = 2, labeller = label_parsed) +
   labs(
-    title = expression(atop(
-      "Identified bounds",
-      beta == 0.5 ~ "," ~ sigma[XZ] == -0.3
-    )),
     x = expression(delta),
     y = expression(B(delta))
   ) +
   theme_minimal()
+
+ggsave("plots/bounds_plot.png", plot = p, width = 8, height = 6, dpi = 600)
+
 
 
