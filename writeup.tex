@@ -1,0 +1,256 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[style=apa]{biblatex}
+\DeclareLanguageMapping{english}{english-apa}
+
+\addbibresource{refs.bib}
+
+\title{Nevo and Rosen (2012): Simulations and Extensions}
+\author{Maximilian Grotz\\Toulouse School of Economics}
+\date{\today}
+
+\onehalfspacing
+
+\begin{document}
+
+\maketitle
+
+\section{Nevo and Rosen (2012)}
+
+\section{ Nevo and Rosen (2012) as Sensitivity Analysis}
+
+\subsection{Sensitivity Analysis: General Approach}
+
+This material has mainly been taken from Paul Diegert's lecture slides on sensitivity analysis. 
+
+Consider a family of models indexed by a sensitivity parameter $\delta \in [\underline{\delta}, \bar{\delta}]$:
+\[
+\mathcal{M}(\delta) \subseteq \mathcal{M}(\delta') \subseteq \mathcal{M}
+\quad \text{for } \delta \le \delta'.
+\]
+
+The parameter $\delta$ governs the strength of assumptions: larger $\delta$ corresponds to weaker assumptions and hence a larger model class.
+
+Assume models are \emph{complete}, i.e.\ each model $m \in \mathcal{M}$ induces a distribution $F^m$ over observables.
+
+Let $F_0$ denote the observed data distribution. The identified set under assumption $\delta$ is $\mathcal{M}_0(\delta) = \{ m \in \mathcal{M}(\delta) : F^m = F_0 \}$
+
+
+For a parameter of interest $\psi : \mathcal{M} \to \mathbb{R}$, the identified set is
+\[
+\Psi_0(\delta) = \{ \psi(m) : m \in \mathcal{M}_0(\delta) \}.
+\]
+
+As $\delta$ increases, the model class $\mathcal{M}(\delta)$ expands, so the identified set $\Psi_0(\delta)$ weakly enlarges. Thus $\delta$ can be interpreted as a \emph{sensitivity parameter} controlling the degree of identification.
+
+\subsection{Connection to \textcite{nevo2012}}
+
+We can see \textcite{nevo2012} imposing the following restrictions with $\delta = 1$:
+
+\[
+\operatorname{sign}\bigl(\operatorname{Cov}(Z,u)\bigr)
+=
+\operatorname{sign}\bigl(\operatorname{Cov}(X,u)\bigr),
+\qquad
+\lvert \operatorname{Corr}(Z,u) \rvert \le \delta \lvert \operatorname{Corr}(X,u) \rvert.
+\]
+
+These restrictions define a set of admissible data-generating processes consistent with observed moments and the structural parameter $\psi(m) = \beta$. This corresponds to specifying a model class $\mathcal{M}(\delta)$, where $\delta \in [0,1]$ .
+
+\subsection{Identified Set in a Linear Model}
+\subsubsection{Univariate instrument}
+
+Redoing calculations from \textcite{nevo2012} we find the following bounds:
+
+\[
+\underline{\beta}(\delta)
+=
+\min\left\{
+\beta^{IV}_{V(0)},
+\beta^{IV}_{V(\delta)}
+\right\},
+\]
+\[
+\overline{\beta}(\delta)
+=
+\max\left\{
+\beta^{IV}_{V(0)},
+\beta^{IV}_{V(\delta)}
+\right\}.
+\]
+
+See \autoref{app:proofs} for the full calculation.
+
+
+
+
+
+\subsubsection{Bivariate instrument}
+
+\section{General simulations}
+
+\section{Networks}
+
+\nocite{nevo2012}
+\printbibliography
+
+
+\appendix
+\section{Identified Set in Linear Model}\label{app:proofs}
+
+\[
+Y=\beta X+U,\qquad E[U]=0.
+\]
+
+Assume
+\[
+\rho_{XU}\rho_{ZU}\ge 0,
+\qquad
+|\rho_{ZU}|\le \delta |\rho_{XU}|,
+\qquad \delta\in[0,1].
+\]
+
+Define
+\[
+\lambda^*
+=
+\frac{\rho_{ZU}}{\rho_{XU}}.
+\]
+
+Then
+\[
+\lambda^*\in[0,\delta].
+\]
+
+For any \(\lambda\in[0,\delta]\), define
+\[
+V(\lambda)=\sigma_X Z-\lambda \sigma_Z X.
+\]
+
+The IV estimand using \(V(\lambda)\) is
+\[
+\beta^{IV}_{V(\lambda)}
+=
+\frac{\operatorname{Cov}(V(\lambda),Y)}
+     {\operatorname{Cov}(V(\lambda),X)}.
+\]
+
+Equivalently,
+\[
+\beta^{IV}_{V(\lambda)}
+=
+\frac{
+\sigma_X\sigma_{ZY}
+-
+\lambda\sigma_Z\sigma_{XY}
+}{
+\sigma_X\sigma_{XZ}
+-
+\lambda\sigma_Z\sigma_X^2
+}.
+\]
+
+Hence the identified set is
+\[
+B(\delta)
+=
+\left\{
+\beta^{IV}_{V(\lambda)}:\lambda\in[0,\delta]
+\right\}.
+\]
+
+Since
+\[
+\frac{d}{d\lambda}
+\beta^{IV}_{V(\lambda)}
+=
+\frac{
+\sigma_X\sigma_Z
+\left(
+\sigma_{ZY}\sigma_X^2
+-
+\sigma_{XY}\sigma_{XZ}
+\right)
+}{
+\left(
+\sigma_X\sigma_{XZ}
+-
+\lambda\sigma_Z\sigma_X^2
+\right)^2
+},
+\]
+the sign of the derivative does not depend on \(\lambda\). Therefore the bounds are attained at the endpoints:
+\[
+\underline{\beta}(\delta)
+=
+\min\left\{
+\beta^{IV}_{V(0)},
+\beta^{IV}_{V(\delta)}
+\right\},
+\]
+\[
+\overline{\beta}(\delta)
+=
+\max\left\{
+\beta^{IV}_{V(0)},
+\beta^{IV}_{V(\delta)}
+\right\}.
+\]
+
+Because
+\[
+V(0)=\sigma_X Z,
+\]
+we have
+\[
+\beta^{IV}_{V(0)}
+=
+\beta^{IV}
+=
+\frac{\sigma_{ZY}}{\sigma_{XZ}}.
+\]
+
+Thus
+\[
+\boxed{
+B(\delta)
+=
+\left[
+\min\left\{
+\frac{\sigma_{ZY}}{\sigma_{XZ}},
+\frac{
+\sigma_X\sigma_{ZY}
+-
+\delta\sigma_Z\sigma_{XY}
+}{
+\sigma_X\sigma_{XZ}
+-
+\delta\sigma_Z\sigma_X^2
+}
+\right\},
+\;
+\max\left\{
+\frac{\sigma_{ZY}}{\sigma_{XZ}},
+\frac{
+\sigma_X\sigma_{ZY}
+-
+\delta\sigma_Z\sigma_{XY}
+}{
+\sigma_X\sigma_{XZ}
+-
+\delta\sigma_Z\sigma_X^2
+}
+\right\}
+\right].
+}
+\]
+
+\end{document}
