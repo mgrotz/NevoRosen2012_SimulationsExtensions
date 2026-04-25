@@ -62,7 +62,7 @@ We can see \textcite{nevo2012} imposing the following restrictions with $\delta 
 =
 \operatorname{sign}\bigl(\operatorname{Cov}(X,u)\bigr),
 \qquad
-\lvert \operatorname{Corr}(Z,u) \rvert \le \delta \lvert \operatorname{Corr}(X,u) \rvert.
+\lvert \operatorname{Corr}(Z,u) \rvert \le \delta \lvert \operatorname{Corr}(X,u) \rvert, \qquad \text{Cov}(Z,X) < 0.
 \]
 
 These restrictions define a set of admissible data-generating processes consistent with observed moments and the structural parameter $\psi(m) = \beta$. This corresponds to specifying a model class $\mathcal{M}(\delta)$, where $\delta \in [0,1]$ .
@@ -104,7 +104,9 @@ In \autoref{fig:bounds} we plot the identified set $B(\delta) = [\underline{\bet
 
 \subsubsection{Bivariate instrument}
 
-The identified set with two instruments is just the intersection of the identified sets from each instrument. The fomula is in \ref{app:proofs}.
+The identified set with two instruments is just the intersection of the identified sets from each instrument. The fomula is in \ref{app:proofs}. Here we have the following endogeneity assumptions:
+
+$$ \lvert \operatorname{Corr}(Z_1,u) \rvert \le \delta_1 \lvert \operatorname{Corr}(X,u) \rvert, \qquad \lvert \operatorname{Corr}(Z_2,u) \rvert \le \delta_2 \lvert \operatorname{Corr}(X,u) \rvert $$
 
 In \autoref{fig:2Z_bounds} the dark blue region corresponds to the strength of assumptions we need to make to reject $\beta=0.4$ in our hypothetical example. The light blue area is the area we are able to reject at now that we have included a second instrument. 
 
@@ -124,7 +126,19 @@ the identified set based on $Z_1$ alone, $Z_2$ alone, and their intersection.
 
 \section{General simulations}
 
+
+
 \section{Networks}
+
+\subsection{Some models}
+As a recap, the assumptions that we need are:
+$$\text{Cov}(Z,X) = 0 \qquad \text{sign}(\text{Cov}(Z,U)) = \text{sign}(\text{Cov}(X,U)) \qquad |\text{Cov}(Z,U)| \leq |\text{Cov}(X,U)|$$
+
+A latent homophily model can be represented as follows:
+$y = \beta Ay + \gamma x + u, \quad u_i = \rho a_i + \varepsilon_i.$
+Connections are formed as follows: 
+$A_{ij}=1\{ \eta_{ij}+ \kappa_a |a_i-a_j|^{-1} > c \}.$
+
 
 \nocite{nevo2012}
 \printbibliography

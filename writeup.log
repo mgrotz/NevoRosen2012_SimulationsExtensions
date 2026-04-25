@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  24 APR 2026 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  25 APR 2026 08:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -685,19 +685,24 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\textcite' on input line 56.
 
+
+Overfull \hbox (7.12221pt too wide) detected at line 66
+[][][]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Z; u\OT1/lmr/m/n/12 )[] = [][][](\OML/lmm/m/it/12 X; u\OT1/lmr/m/n/12 )[]\OML/lmm/m/it/12 ;  \OMS/lmsy/m/n/12 j[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Z; u\OT1/lmr/m/n/12 )\OMS/lmsy/m/n/12 j ^^T \OML/lmm/m/it/12 ^^N\OMS/lmsy/m/n/12 j[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 X; u\OT1/lmr/m/n/12 )\OMS/lmsy/m/n/12 j\OML/lmm/m/it/12 ;  []\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Z; X\OT1/lmr/m/n/12 ) \OML/lmm/m/it/12 < \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :
+ []
+
 [1
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-<plots/bounds_plot.png, id=78, 578.16pt x 433.62pt>
+<plots/bounds_plot.png, id=82, 578.16pt x 433.62pt>
 File: plots/bounds_plot.png Graphic file (type png)
 <use plots/bounds_plot.png>
 Package pdftex.def Info: plots/bounds_plot.png  used on input line 98.
 (pdftex.def)             Requested size: 362.37569pt x 271.77934pt.
  [2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./plots/bounds_plot.png>]
-<plots/bounds_2Z_plot.png, id=90, 578.16pt x 433.62pt>
+<plots/bounds_2Z_plot.png, id=94, 578.16pt x 433.62pt>
 File: plots/bounds_2Z_plot.png Graphic file (type png)
 <use plots/bounds_2Z_plot.png>
-Package pdftex.def Info: plots/bounds_2Z_plot.png  used on input line 113.
+Package pdftex.def Info: plots/bounds_2Z_plot.png  used on input line 115.
 (pdftex.def)             Requested size: 362.37569pt x 271.77934pt.
  [3 <./plots/bounds_2Z_plot.png>] [4] [5] (./writeup.aux)
  ***********
@@ -705,24 +710,24 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `writeup.out' has not changed.
-(rerunfilecheck)             Checksum: 564694AFB457746C4046516714E4A726;2456.
+(rerunfilecheck)             Checksum: BB3F700631DF3498F99E347DF31CEB8F;2572.
 Package logreq Info: Writing requests to 'writeup.run.xml'.
 \openout1 = `writeup.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18685 strings out of 467525
- 325443 string characters out of 5418982
- 1260055 words of memory out of 5000000
- 47355 multiletter control sequences out of 15000+600000
+ 18687 strings out of 467525
+ 325473 string characters out of 5418982
+ 1260058 words of memory out of 5000000
+ 47356 multiletter control sequences out of 15000+600000
  684356 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,79p,883b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on writeup.pdf (5 pages, 748842 bytes).
+Output written on writeup.pdf (5 pages, 752733 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 175 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
