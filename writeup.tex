@@ -134,10 +134,12 @@ the identified set based on $Z_1$ alone, $Z_2$ alone, and their intersection.
 As a recap, the assumptions that we need are:
 $$\text{Cov}(Z,X) = 0 \qquad \text{sign}(\text{Cov}(Z,U)) = \text{sign}(\text{Cov}(X,U)) \qquad |\text{Cov}(Z,U)| \leq |\text{Cov}(X,U)|$$
 
-A latent homophily model can be represented as follows:
-$y = \beta Ay + \gamma x + u, \quad u_i = \rho a_i + \varepsilon_i.$
+A latent homophily linear-in-means model inspired by can be represented as follows:
+$y = \beta Gy + \gamma x + u, \quad u_i = \rho a_i + \varepsilon_i.$
 Connections are formed as follows: 
-$A_{ij}=1\{ \eta_{ij}+ \kappa_a |a_i-a_j|^{-1} > c \}.$
+$A_{ij}=1\{ \eta_{ij}+ \kappa_a |a_i-a_j|^{-1} > c \}$ and G is the row-normalized adjacency matrix, so $G=\text{diag}(A\iota_N)^{-1}A$.
+
+Wihtout latent homophily, \textcite{bramoulle2009identification} suggests using $G^2x$ as an instrument for $Gy$. This assumption fails in our model as $\mathbb E[(G^2x)_i u_i] \neq 0$, see \autoref{app:networks}.
 
 
 \nocite{nevo2012}
@@ -145,6 +147,8 @@ $A_{ij}=1\{ \eta_{ij}+ \kappa_a |a_i-a_j|^{-1} > c \}.$
 
 
 \appendix
+
+\newpage 
 
 \section{An Example of Sensitivity Analysis}
 
@@ -351,5 +355,42 @@ and
 }
 \right\}.
 \]
+
+\section{Networks} \label{app:networks}
+
+\subsection{Invalidity of standard instrument} 
+
+To use $G^2x$ as an instrument, we need $\mathbb E[(G^2x)_i u_i]=0$. But in your model, $u_i=\rho a_i+\varepsilon_i$. Therefore, $\mathbb E[(G^2x)_i u_i]=\rho\,\mathbb E[(G^2x)_i a_i]+\mathbb E[(G^2x)_i\varepsilon_i].$ If $\varepsilon_i$ is independent of $G,x,a$, then $\mathbb E[(G^2x)_i\varepsilon_i]=0$. Now write $(G^2x)_i=\sum_{j=1}^n \sum_{k=1}^n G_{ij}G_{jk}x_k.$
+
+Hence
+$$\mathbb E[(G^2x)_i a_i]
+=
+\mathbb E\left[
+a_i
+\sum_{j=1}^n \sum_{k=1}^n G_{ij}G_{jk}x_k
+\right].$$
+
+If G is formed from A, and
+
+$$A_{ij}
+=
+\mathbf 1\left\{
+\eta_{ij}
++
+k_a |a_i-a_j|^{-1}
+> c
+\right\}$$,
+
+then $G_{ij}$ is a function of $a_i$ and $a_j$. Therefore $G^2x$ is also a function of $a_i$, through paths $i \to j \to k$.
+
+Thus, generally,
+
+$$\mathbb E\left[
+a_i
+\sum_{j=1}^n \sum_{k=1}^n G_{ij}G_{jk}x_k
+\right]
+\neq 0$$.
+
+So $\mathbb E[(G^2x)_i u_i]\neq 0$.
 
 \end{document}

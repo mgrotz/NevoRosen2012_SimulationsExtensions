@@ -2,7 +2,7 @@ PWD /Users/mgrotz/Library/CloudStorage/OneDrive-Personal/Dokumente/PhD Economics
 INPUT /usr/local/texlive/2026/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT writeup.tex
+INPUT /Users/mgrotz/Library/CloudStorage/OneDrive-Personal/Dokumente/PhD Economics - TSE/Courses/Semester 2/Topics in Econometrics and Empirical Economics/NevoRosen2012_SimulationsExtensions/writeup.tex
 OUTPUT writeup.log
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/article.cls
@@ -279,6 +279,9 @@ INPUT ./plots/bounds_2Z_plot.png
 INPUT ./plots/bounds_2Z_plot.png
 INPUT ./plots/bounds_2Z_plot.png
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm
 INPUT writeup.aux
 INPUT ./writeup.out
 INPUT ./writeup.out

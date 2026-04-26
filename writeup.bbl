@@ -19,6 +19,53 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{bramoulle2009identification}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=02bb2716dccae6b1170711ea95b05795}{%
+           family={Bramoullé},
+           familyi={B\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6a431b4f3c455c38b9c0095050fa0613}{%
+           family={Djebbari},
+           familyi={D\bibinitperiod},
+           given={Habiba},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=33a62167e8a54db9578a8ec570a2f0c3}{%
+           family={Fortin},
+           familyi={F\bibinitperiod},
+           given={Bernard},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9aef1bf7e8d8614b509b4586ed8e7b8a}
+      \strng{fullhash}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{fullhashraw}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{bibnamehash}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{authorbibnamehash}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{authornamehash}{9aef1bf7e8d8614b509b4586ed8e7b8a}
+      \strng{authorfullhash}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{authorfullhashraw}{2dc2a171d8fbffed1cd9321728cddd15}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{number}{1}
+      \field{title}{Identification of peer effects through social networks}
+      \field{volume}{150}
+      \field{year}{2009}
+      \field{pages}{41\bibrangedash 55}
+      \range{pages}{15}
+    \endentry
     \entry{nevo2012}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=13512110224d21f56fcb1a42944614d5}{%
@@ -59,6 +106,53 @@
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global/global}
+    \entry{bramoulle2009identification}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=02bb2716dccae6b1170711ea95b05795}{%
+           family={Bramoullé},
+           familyi={B\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6a431b4f3c455c38b9c0095050fa0613}{%
+           family={Djebbari},
+           familyi={D\bibinitperiod},
+           given={Habiba},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=33a62167e8a54db9578a8ec570a2f0c3}{%
+           family={Fortin},
+           familyi={F\bibinitperiod},
+           given={Bernard},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9aef1bf7e8d8614b509b4586ed8e7b8a}
+      \strng{fullhash}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{fullhashraw}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{bibnamehash}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{authorbibnamehash}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{authornamehash}{9aef1bf7e8d8614b509b4586ed8e7b8a}
+      \strng{authorfullhash}{2dc2a171d8fbffed1cd9321728cddd15}
+      \strng{authorfullhashraw}{2dc2a171d8fbffed1cd9321728cddd15}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{number}{1}
+      \field{title}{Identification of peer effects through social networks}
+      \field{volume}{150}
+      \field{year}{2009}
+      \field{pages}{41\bibrangedash 55}
+      \range{pages}{15}
+    \endentry
     \entry{nevo2012}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=13512110224d21f56fcb1a42944614d5}{%
