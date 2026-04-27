@@ -25,7 +25,11 @@
 
 \maketitle
 
-\section{Nevo and Rosen (2012)}
+\section{Introduction}
+
+In this project I would like to present two independent ideas. The first is to interpret the framework of \textcite{nevo2012} as a sensitivity analysis approach, where the parameter $\delta$ governs the strength of assumptions and hence the degree of identification. I will show how to derive the identified set for $\beta$ in a linear model with one or two imperfect instruments, and illustrate how the identified set changes as we relax assumptions. This adds values as this allows researchers to understand the robustness of their conclusions to violations of the standard IV assumptions.
+
+The second idea is to apply the insights from \textcite{nevo2012} to a network setting. In empirical work on peer effects, it is common to use observables of neighbors as instruments, as in \cite{bramoulle2009identification}. However, if there is correlation between individual errors and neighbors' observables, the exogeneity of such instruments may fail, and they must be treated as imperfect instruments. In network data, a natural hierarchy of instruments arises: observables of direct neighbors ($Gx$), second-order neighbors ($G^2 x$), third-order neighbors ($G^3 x$), and so on. It is often plausible that more distant neighbors are less correlated with the individual error term. This is a setting in which Proposition 5 from \textcite{nevo2012} could be applied. While some of the intuition could be confirmed by our simulations, even after trying many different model specifications rarely the conditions of Proposition 5 were met. An analytical investigation on further conditions when \textcite{nevo2012} is applicable would be of great interest.
 
 \section{ Nevo and Rosen (2012) as Sensitivity Analysis}
 
@@ -130,16 +134,132 @@ the identified set based on $Z_1$ alone, $Z_2$ alone, and their intersection.
 
 \section{Networks}
 
-\subsection{Some models}
-As a recap, the assumptions that we need are:
-$$\text{Cov}(Z,X) = 0 \qquad \text{sign}(\text{Cov}(Z,U)) = \text{sign}(\text{Cov}(X,U)) \qquad |\text{Cov}(Z,U)| \leq |\text{Cov}(X,U)|$$
+\subsection{Motivation and idea.}
+A key insight from the discussion between Proposition 4 and Proposition 5 in the paper is that, when two imperfect instruments are available, one can exploit their relative degree of endogeneity by constructing transformations (e.g.\ differences) to relax the strict requirements of Proposition 4. 
 
-A latent homophily linear-in-means model inspired by can be represented as follows:
-$y = \beta Gy + \gamma x + u, \quad u_i = \rho a_i + \varepsilon_i.$
-Connections are formed as follows: 
-$A_{ij}=1\{ \eta_{ij}+ \kappa_a |a_i-a_j|^{-1} > c \}$ and G is the row-normalized adjacency matrix, so $G=\text{diag}(A\iota_N)^{-1}A$.
+This idea may be particularly useful in network settings. In empirical work on peer effects, it is common to use observables of neighbors as instruments, as in \textcite{bramoulle2009identification}. However, if there is correlation between individual errors and neighbors' observables, the exogeneity of such instruments may fail, and they must be treated as imperfect instruments.
 
-Wihtout latent homophily, \textcite{bramoulle2009identification} suggests using $G^2x$ as an instrument for $Gy$. This assumption fails in our model as $\mathbb E[(G^2x)_i u_i] \neq 0$, see \autoref{app:networks}.
+In network data, a natural hierarchy of instruments arises: observables of direct neighbors ($Gx$), second-order neighbors ($G^2 x$), third-order neighbors ($G^3 x$), and so on. It is often plausible that more distant neighbors are less correlated with the individual error term. This suggests that higher-order network instruments may be less endogenous than lower-order ones, providing a setting in which Proposition 5 can be applied.
+
+\subsection{Model}
+Consider the linear-in-means model
+\[
+y = \beta G y + \gamma x + \varepsilon,
+\qquad
+G = \operatorname{diag}(A \iota_N)^{-1} A,
+\]
+where $A$ is the adjacency matrix of the network.
+
+Network formation is governed by a latent score:
+\[
+\text{score}_{ij}
+=
+\eta_{ij}
++
+\kappa_{\varepsilon x} (\varepsilon_i x_j + x_i \varepsilon_j)
++
+\kappa_{xx} x_i x_j,
+\]
+and links are formed according to
+\[
+A_{ij}
+=
+\mathbf{1}
+\left\{
+\text{score}_{ij} > c
+\right\},
+\]
+where $c$ is chosen to match a target density.
+
+This specification implies that individuals with similar observable characteristics $x$ are more likely to be connected, and that individuals with high $x$ are also more likely to connect with individuals with high unobserved components $\varepsilon$. For example, highly educated individuals may form links with similarly educated individuals (observable sorting), but also with individuals of high latent productivity (unobservable sorting).
+
+
+In this setting, $Gx$ is generally endogenous:. However, it is plausible that higher-order instruments satisfy
+\[
+|\operatorname{Corr}(\varepsilon, G^2 x)| 
+\le 
+|\operatorname{Corr}(\varepsilon, Gx)|,
+\]
+and similarly for $G^3 x$, $G^4 x$, etc.
+
+Thus, $\{Gx, G^2 x\}$ can be interpreted as two imperfect instruments with differing degrees of endogeneity, allowing the application of Proposition 5.
+
+\paragraph{Conditions.}
+To apply Proposition 5, the following conditions are required:
+\[
+\text{(1)} \qquad \operatorname{Corr}(\varepsilon, Gx) > 0,
+\qquad
+\operatorname{Corr}(\varepsilon, G^2 x) > 0,
+\]
+and
+\[
+\text{(2)} \qquad  \left(
+\sigma_{XX} \sigma_{Z_j}
+-
+\sigma_{XZ_j} \sigma_X
+\right)
+\sigma_{XZ_j}
+> 0,
+\qquad j = 1,2,
+\]
+where $X = Gy$ and $Z_j \in \{Gx, G^2 x\}$. Furthermore, we define $\omega(\gamma) =\gamma Z_2 - (1-\gamma) Z_1$. Now we need there to exist some $\gamma \in [0,1]$ such that
+
+\[
+\text{(i)} \quad
+\sigma_{\omega(\gamma^*) u}
+=
+\operatorname{Cov}(\omega(\gamma^*), u)
+\ge 0,
+\]
+\[
+\text{(ii)} \quad
+\bigl(
+\sigma_{XX} \, \sigma_{\omega(\gamma^*)}
+-
+\sigma_{\omega(\gamma^*)X} \, \sigma_X
+\bigr)
+\,
+\sigma_{\omega(\gamma^*)X}
+< 0,
+\]
+\[
+\text{where } X = Gy, \quad Z_1 = Gx, \quad Z_2 = G^2 x.
+\]
+
+These conditions formalize that the instruments have the same direction of endogeneity as the regressor and satisfy the additional monotonicity-type restriction required for identification.
+
+\subsection{Simulations}
+
+I started out the simulations by implementing the network formation process and the data-generating process for $y$ as described above. I then computed the correlations $\operatorname{Corr}(\varepsilon, Gx)$ and $\operatorname{Corr}(\varepsilon, G^2 x)$ to verify that the higher-order instrument is indeed less endogenous. Finally, I applied Proposition 5 to compute the identified set for $\beta$ based on the two instruments.
+
+We set $n = 1000$, $\beta = 0.75$, $\gamma = 4$, $\kappa_{\varepsilon x} = 0.01$, $\kappa_{xx} = 0.01$, and a target network density of $0.08$, with $\eta_{ij} \sim \mathcal{N}(0,1)$ and $\varepsilon_i \sim \mathcal{N}(0,1)$ independently. We perform 100 Monte Carlo simulations. 75 fullfill condition (1), while all fulfill condition (2). This is visualized in \autoref{fig:correlations}.
+
+\begin{figure}[hhtp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{corr_networks.png}
+    \caption{Correlations between the error term $\varepsilon$, the endogenous regressor $\bar{y}$, the instruments $Gx$ and $G^2 x$ across 100 simulations. The plot shows that $\operatorname{Corr}(\varepsilon, G^2 x)$ is generally smaller than $\operatorname{Corr}(\varepsilon, Gx)$, confirming that the second-order instrument is less endogenous.
+} \label{fig:correlations}
+\end{figure}
+
+To find the $\gamma^*$ that satisfies the conditions of Proposition 5, we can perform a grid search over $\gamma \in [0,1]$ to check for the existence of a $\gamma$ that meets both conditions (i) and (ii). This is of course not possible in empirical applications as we cannot observe the $u$, but for illustrative purposes it is still useful. In our simulations, we find that such a $\gamma^*$ only exists in 6 cases. Still, we plot all the OLS and IV estimates along with the bounds from Proposition 5 in \autoref{fig:ols_iv_bounds}. We can see that the OLS estimator is biased due to endogeneity, while the IV estimator using $Gx$ is also biased but less so. The bounds from Proposition 5 only contain the true value of $\beta$ in one case. 
+
+
+\begin{figure}[hhtp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{ols_iv_bounds.png}
+    \caption{Distribution of OLS estimator and IV estimator using $Gx$ across 100 simulations. The OLS estimator is biased due to endogeneity, while the IV estimator using $Gx$ is also biased but less so. By applying Proposition 5 with $G^2 x$ as the second instrument, we can compute bounds on $\beta$ that account for the imperfect nature of $Gx$, represented by black horizontal lines.
+}
+    \label{fig:ols_iv_bounds}
+\end{figure}
+
+Once we realized that the conditions of Proposition 5 are almost never satisfied by our model, we grid searched over other parameter values for our model to see whether a specfication exists that satisfies the conditions more often. We did not find any such specification. 
+
+\subsection{Conclusion on networks}
+
+This section demonstrates that the imperfect IV framework of Proposition 5 can, in principle, be applied in network settings by exploiting the natural hierarchy of instruments given by neighbors at different distances. In our model, $Gx$ and $G^2x$ can be interpreted as two imperfect instruments with ordered degrees of endogeneity, reflecting the underlying network formation process driven by both observables and unobservables.
+
+The simulations confirm that higher-order instruments tend to be less endogenous on average, as $\operatorname{Corr}(\varepsilon, G^2x)$ is typically smaller than $\operatorname{Corr}(\varepsilon, Gx)$. This supports the core intuition that more distant neighbors may provide cleaner sources of variation. However, the results do not let us apply the identification strategy of Proposition 5 in most cases, as the required conditions are rarely satisfied in our simulated data. An analytical investigation on further conditions when \textcite{nevo2012} is applicable in network settings seems to be a promising avenue for future research.
+
 
 
 \nocite{nevo2012}
@@ -149,9 +269,6 @@ Wihtout latent homophily, \textcite{bramoulle2009identification} suggests using 
 \appendix
 
 \newpage 
-
-\section{An Example of Sensitivity Analysis}
-
 
 
 \section{Identified Set in Linear Model}\label{app:proofs}
@@ -355,42 +472,5 @@ and
 }
 \right\}.
 \]
-
-\section{Networks} \label{app:networks}
-
-\subsection{Invalidity of standard instrument} 
-
-To use $G^2x$ as an instrument, we need $\mathbb E[(G^2x)_i u_i]=0$. But in your model, $u_i=\rho a_i+\varepsilon_i$. Therefore, $\mathbb E[(G^2x)_i u_i]=\rho\,\mathbb E[(G^2x)_i a_i]+\mathbb E[(G^2x)_i\varepsilon_i].$ If $\varepsilon_i$ is independent of $G,x,a$, then $\mathbb E[(G^2x)_i\varepsilon_i]=0$. Now write $(G^2x)_i=\sum_{j=1}^n \sum_{k=1}^n G_{ij}G_{jk}x_k.$
-
-Hence
-$$\mathbb E[(G^2x)_i a_i]
-=
-\mathbb E\left[
-a_i
-\sum_{j=1}^n \sum_{k=1}^n G_{ij}G_{jk}x_k
-\right].$$
-
-If G is formed from A, and
-
-$$A_{ij}
-=
-\mathbf 1\left\{
-\eta_{ij}
-+
-k_a |a_i-a_j|^{-1}
-> c
-\right\}$$,
-
-then $G_{ij}$ is a function of $a_i$ and $a_j$. Therefore $G^2x$ is also a function of $a_i$, through paths $i \to j \to k$.
-
-Thus, generally,
-
-$$\mathbb E\left[
-a_i
-\sum_{j=1}^n \sum_{k=1}^n G_{ij}G_{jk}x_k
-\right]
-\neq 0$$.
-
-So $\mathbb E[(G^2x)_i u_i]\neq 0$.
 
 \end{document}
