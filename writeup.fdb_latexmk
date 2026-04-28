@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber writeup"] 1777252009.04038 "writeup.bcf" "writeup.bbl" "writeup" 1777252103.84324 0
+["biber writeup"] 1777252009.04038 "writeup.bcf" "writeup.bbl" "writeup" 1777263617.53308 0
   "refs.bib" 1777106175.01203 557 ed9efa10a8176602ebeb608b9e10bf9d ""
-  "writeup.bcf" 1777252103.77345 135265 0f1e33120d9100b3f037a833fa041420 "pdflatex"
+  "writeup.bcf" 1777263617.46001 135265 0f1e33120d9100b3f037a833fa041420 "pdflatex"
   (generated)
   "writeup.bbl"
   "writeup.blg"
   (rewritten before read)
-["pdflatex"] 1777252101.27491 "/Users/mgrotz/Library/CloudStorage/OneDrive-Personal/Dokumente/PhD Economics - TSE/Courses/Semester 2/Topics in Econometrics and Empirical Economics/NevoRosen2012_SimulationsExtensions/writeup.tex" "writeup.pdf" "writeup" 1777252103.84348 0
-  "/Users/mgrotz/Library/CloudStorage/OneDrive-Personal/Dokumente/PhD Economics - TSE/Courses/Semester 2/Topics in Econometrics and Empirical Economics/NevoRosen2012_SimulationsExtensions/writeup.tex" 1777252101.18331 16807 9ff24dba147361c8c26ec17a10d9ed29 ""
+["pdflatex"] 1777263614.92066 "/Users/mgrotz/Library/CloudStorage/OneDrive-Personal/Dokumente/PhD Economics - TSE/Courses/Semester 2/Topics in Econometrics and Empirical Economics/NevoRosen2012_SimulationsExtensions/writeup.tex" "writeup.pdf" "writeup" 1777263617.53338 0
+  "/Users/mgrotz/Library/CloudStorage/OneDrive-Personal/Dokumente/PhD Economics - TSE/Courses/Semester 2/Topics in Econometrics and Empirical Economics/NevoRosen2012_SimulationsExtensions/writeup.tex" 1777263612.02589 16644 51aade93cf20d62a914cd5e40191121d ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -154,11 +154,11 @@
   "plots/bounds_plot.png" 1777023870.0136 270605 5886075fa1cc92b22cd66d3667945aff ""
   "plots/corr_networks.png" 1777250889.20648 41912 2c8836ab90f3c8a809f8663b79010b50 ""
   "plots/ols_iv_bounds.png" 1777250384.01737 50941 55ba1cf49c018325f115a48281632a65 ""
-  "writeup.aux" 1777252103.77189 8015 ee7bddf0d5e8295805b309d7501d033c "pdflatex"
+  "writeup.aux" 1777263617.45843 7899 fefb3250633ccff66b658aa7892e53c1 "pdflatex"
   "writeup.bbl" 1777252010.21081 7582 fc5081bceb8adbb16ae8d369654c5fa7 "biber writeup"
-  "writeup.out" 1777252103.77266 2703 3f12270b69d2ce3979afbda134caa3c0 "pdflatex"
-  "writeup.run.xml" 1777252103.77395 2442 123d25b9ecd34df6636489786a79ed19 "pdflatex"
-  "writeup.tex" 1777252101.18331 16807 9ff24dba147361c8c26ec17a10d9ed29 ""
+  "writeup.out" 1777263617.45922 2561 d7e996105e9895152163a037475548d7 "pdflatex"
+  "writeup.run.xml" 1777263617.46055 2442 123d25b9ecd34df6636489786a79ed19 "pdflatex"
+  "writeup.tex" 1777263612.02589 16644 51aade93cf20d62a914cd5e40191121d ""
   (generated)
   "writeup.aux"
   "writeup.bcf"
