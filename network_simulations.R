@@ -2,6 +2,8 @@ library(dplyr)
 library(tidyr)
 library(purrr)
 library(ggplot2)
+library(tibble)
+library(AER)
 
 
 ###############################################################################
@@ -337,7 +339,7 @@ param_grid <- expand.grid(
   target_density = c(0.02, 0.08, 0.2)
 )
 
-R <- 40
+R <- 20
 
 all_results <- list()
 
